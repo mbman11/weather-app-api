@@ -1,3 +1,74 @@
 nav {
-  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  background-color: rgb(18, 160, 208);
+  height: 50px;
+  margin-bottom: 20px;
 }
+
+.flex-box{
+  display: flex;
+}
+
+.title-search {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+#user-input {
+  width: 200px;
+}
+
+#button {
+  display: flex;
+  margin-top: 20px;
+  background-color: rgb(91, 189, 11);
+  border: none;
+  height: 50px;
+  width: 210px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+.hide {
+  display: none;
+}
+
+#result {
+  background-color: pink;
+}
+
+.weather-section {
+  text-align: center;
+  margin-left: 50px;
+  /* margin-right: 50px; */
+  align-items: center;
+  width: 200px;
+  height: 300px;
+  word-wrap: break-word;
+  gap: 50px;
+  border: solid rgb(91, 189, 11);
+  gap: 20px;
+  background-color: lightblue;
+  border-radius: 10px;
+}
+
+#current-weather {
+  display: block;
+  background-color: blue;
+  width: 1325px;
+  text-align: center;
+}
+
+
+h2 {
+  display: flex; 
+  justify-content: center; 
+}
+
