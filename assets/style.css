@@ -89,8 +89,8 @@ button {
 
 #current-weather {
   border-radius: 10px;
-  /* background-color: rgb(185, 216, 227);
-  border: solid rgb(91, 189, 11); */
+  background-color: rgb(185, 216, 227);
+  border: solid rgb(91, 189, 11);
   margin-top: 20px;
   display: block;
   /* width: 1295px; */
