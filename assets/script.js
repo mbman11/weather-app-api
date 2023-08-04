@@ -8,17 +8,20 @@ function textValue() {
 
   if(userInput.length !== 5 || userInput == NaN) {
     var wrongInputP = document.createElement('p');
+    wrongInputP.setAttribute('id', 'wrong-input');
     wrongInputP.textContent = "Please Enter A Correct ZipCode.";
     var idLeftDiv = document.getElementById('left-side-div');
     idLeftDiv.append(wrongInputP);
     return;
   } if (userInput.length == 5 && !NaN) {
-    var wrongInputP = document.createElement('p');
+    
+    handleApiResponse;
   } 
 
   var idLeftDiv = document.getElementById('left-side-div');
-
   var createUserInEl = document.createElement('button');
+  createUserInEl.setAttribute('id','button-2');
+  document.getElementById('button-2');
   createUserInEl.textContent = userInput;
   idLeftDiv.append(createUserInEl);
 
@@ -40,13 +43,12 @@ function currentWeather(queryURL2, queryURL1) {
   }).then(function (data) {
 
     var  mainResultC = document.getElementById('result')
-
     var cWeatherArea = document.getElementById('current-weather');
     var cWeatherContent ="Today's Weather: " + data.city.name + ', ' + data.city.country + ' ' + data.list[0].dt_txt.split(" ")[0];
-
+    // reset container
     cWeatherArea.innerHTML = "";
 
-    var temperature = document.createElement('p')
+    var temperature = document.createElement('p');
     temperature.textContent = 'Temp: ' + data.list[0].main.temp + '°F';
 
     var wind = document.createElement('p')
@@ -72,16 +74,8 @@ function currentWeather(queryURL2, queryURL1) {
     cWeatherArea.append(wind);
     cWeatherArea.append(humidity);
     cWeatherArea.append(description);
-
     mainResultC.append(cWeatherArea);
 
-
-
-    // console.log(data.list[0].dt_txt);
-    // today forecast can happen right here    
-
-    
-    // currentWeather(queryURL2);
     getFiveDay(queryURL1);
   })
 }
@@ -102,12 +96,9 @@ function getFiveDay(queryURL) {
 
 function handleApiResponse(data) {
   var resultContainer = document.getElementById('five-day');
-  // Limit the number of results to 5 from the weather list
-  var weatherList = data.list
-  //reset container
-
+  var weatherList = data.list;
+// clear container
   resultContainer.innerHTML = "";
-
 
   var fiveDayTitle = document.createElement('div');
   fiveDayTitle.setAttribute('id','five-day-title');
@@ -117,7 +108,6 @@ function handleApiResponse(data) {
   fiveDayP.textContent = "5 Day Forecast: ";
 
   fiveDayTitle.append(fiveDayP);
-  
   resultContainer.append(fiveDayTitle);
 
   weatherList.forEach(function (item) {
@@ -125,9 +115,6 @@ function handleApiResponse(data) {
     if (time === "12:00:00") {
       var weatherSection = document.createElement('div');
       weatherSection.classList.add('weather-section');
-
-      // var cityName = document.createElement('h3')
-      // cityName.textContent = data.city.name;
 
       var date = document.createElement('p');
       date.textContent = "Date: " + item.dt_txt.split(" ")[0];
@@ -157,29 +144,10 @@ function handleApiResponse(data) {
 
 
       resultContainer.appendChild(weatherSection);
-
     }
 
   });
 }
 
 
-
-//   // Loop through the weather list and append each item to the result container
-
-//   weatherList.forEach(function(item) {
-//     var weatherItem = document.createElement('p');
-//     weatherItem.textContent = JSON.stringify(item);
-//     resultContainer.appendChild(weatherItem);
-
-
-
-//     console.log(data);
-//   });
-// }
-
-
-
 fetchButton.addEventListener('click', textValue);
-
-
