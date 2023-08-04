@@ -44,6 +44,8 @@ function currentWeather(queryURL2, queryURL1) {
     var cWeatherArea = document.getElementById('current-weather');
     var cWeatherContent ="Today's Weather: " + data.city.name + ', ' + data.city.country + ' ' + data.list[0].dt_txt.split(" ")[0];
 
+    cWeatherArea.innerHTML = "";
+
     var temperature = document.createElement('p')
     temperature.textContent = 'Temp: ' + data.list[0].main.temp + '°F';
 
@@ -103,7 +105,9 @@ function handleApiResponse(data) {
   // Limit the number of results to 5 from the weather list
   var weatherList = data.list
   //reset container
+
   resultContainer.innerHTML = "";
+
 
   var fiveDayTitle = document.createElement('div');
   fiveDayTitle.setAttribute('id','five-day-title');
