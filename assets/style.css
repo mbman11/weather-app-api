@@ -13,6 +13,12 @@ nav {
   display: flex;
 }
 
+/* left section */
+#left-side-div {
+  width: 260px;
+  /* margin-right: 20px; */
+}
+
 .title-search {
   font-size: 30px;
   margin-bottom: 20px;
@@ -20,9 +26,10 @@ nav {
 
 #user-input {
   width: 200px;
+  height:30px;
 }
 
-#button {
+#button-1 {
   display: flex;
   margin-top: 20px;
   background-color: rgb(91, 189, 11);
@@ -36,34 +43,60 @@ nav {
   font-size: 20px;
 }
 
-.hide {
-  display: none;
+button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 210px;
+  background-color: rgb(214, 211, 211);
+  border: none;
+  height: 30px;
+  border-radius: 10px;
 }
 
+#hide {
+  display: none;
+}
+/* end left side section */
+
+
+
+/* start 5 day forecast */
 #result {
-  background-color: pink;
+  border: none;
+}
+
+#five-day-title{
+  font-size: 25px;
+  display: flex;
 }
 
 .weather-section {
   text-align: center;
-  margin-left: 50px;
-  /* margin-right: 50px; */
+  margin-left: 15px;
   align-items: center;
   width: 200px;
   height: 300px;
   word-wrap: break-word;
-  gap: 50px;
   border: solid rgb(91, 189, 11);
   gap: 20px;
   background-color: lightblue;
   border-radius: 10px;
 }
+/* end 5 day */
+
+
+/* start current 1 day weather */
 
 #current-weather {
+  border-radius: 10px;
+  /* background-color: rgb(185, 216, 227);
+  border: solid rgb(91, 189, 11); */
+  margin-top: 20px;
   display: block;
-  background-color: blue;
-  width: 1325px;
+  /* width: 1295px; */
   text-align: center;
+  padding-top: 30px;
+  padding-bottom: 50px;
 }
 
 
@@ -71,4 +104,6 @@ h2 {
   display: flex; 
   justify-content: center; 
 }
+
+
 
